@@ -40,8 +40,6 @@ async function getGoldPriceUsd() {
   }
 }
 
-console.log(getGoldPriceUsd());
-
 // --- MongoDB Bağlantısı ---
 // Bağlantıyı bir kere yapıp tekrar kullanmak için global bir değişken kullanalım
 let cachedDb = null;
