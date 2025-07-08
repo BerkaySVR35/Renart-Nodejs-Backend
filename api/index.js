@@ -62,9 +62,9 @@ async function connectToDatabase() {
     const client = await mongoose.connect(process.env.MONGODB_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      serverSelectionTimeoutMS: 5000, // Sunucu seçimi için daha kısa bir zaman aşımı ekleyelim (5 saniye)
+      serverSelectionTimeoutMS: 3000, // Sunucu seçimi için daha kısa bir zaman aşımı ekleyelim (5 saniye)
       socketTimeoutMS: 45000, // Soket zaman aşımı
-      connectTimeoutMS: 10000, // Bağlantı zaman aşımı
+      connectTimeoutMS: 50000, // Bağlantı zaman aşımı
     });
     cachedDb = client.connections[0].db;
     console.log(
