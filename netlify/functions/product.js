@@ -70,7 +70,7 @@ app.get("/", (req, res) => {
 });
 
 // Ürünleri Listele (endpoint'i "/products" olarak değiştirildi)
-app.get("/products", async (req, res) => {
+app.get("/.netlify/functions/product", async (req, res) => {
   // <-- "/api/products" yerine SADECE "/products"
   try {
     await connectToDatabase();
