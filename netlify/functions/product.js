@@ -99,7 +99,7 @@ app.get("/", (req, res) => {
   );
 });
 
-app.get("/api/products", async (req, res) => {
+app.get("/products", async (req, res) => {
   try {
     const products = await Product.find({});
     res.status(200).json(products);
@@ -109,7 +109,7 @@ app.get("/api/products", async (req, res) => {
 });
 
 // New Product POST endpoint
-app.post("/api/products", async (req, res) => {
+app.post("/products", async (req, res) => {
   //console.log("Gelen istek gövdesi:", req.body);
 
   // destructuring from req.body
