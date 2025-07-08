@@ -51,17 +51,43 @@ async function connectToDatabase() {
 
   try {
     console.log("Yeni veritabanı bağlantısı oluşturuluyor...");
+    // Bağlantı dizenizin ilk birkaç karakterini (şifresiz) loglayalım, emin olmak için
+    console.log(
+      "MONGODB_URI başlangıcı:",
+      process.env.MONGODB_URI
+        ? process.env.MONGODB_URI.substring(0, 30) + "..."
+        : "URI Tanımsız"
+    );
+
     const client = await mongoose.connect(process.env.MONGODB_URI, {
-      // Ortam değişkeni kullanıldı
       useNewUrlParser: true,
       useUnifiedTopology: true,
+      serverSelectionTimeoutMS: 5000, // Sunucu seçimi için daha kısa bir zaman aşımı ekleyelim (5 saniye)
+      socketTimeoutMS: 45000, // Soket zaman aşımı
+      connectTimeoutMS: 10000, // Bağlantı zaman aşımı
     });
     cachedDb = client.connections[0].db;
-    console.log("MongoDB'ye başarıyla bağlandı.");
+    console.log(
+      "MongoDB'ye başarıyla bağlandı. Veritabanı adı:",
+      client.connections[0].name
+    );
     return cachedDb;
   } catch (error) {
-    console.error("MongoDB bağlantısı başarısız oldu:", error);
-    throw new Error("MongoDB bağlantısı başarısız oldu.");
+    // Hatanın tüm detaylarını JSON olarak logla
+    console.error("MongoDB bağlantısı başarısız oldu:", {
+      name: error.name,
+      message: error.message,
+      stack: error.stack, // Hatanın çağrı yığını
+      code: error.code, // Hata kodu varsa (örn. ETIMEDOUT, ENOTFOUND)
+      syscall: error.syscall, // Sistem çağrısı hatası varsa
+      address: error.address, // Hatanın kaynaklandığı adres
+      port: error.port, // Hatanın kaynaklandığı port
+      // Eğer MongooseServerSelectionError ise, reasons alanını da logla
+      reasons: error.reasons
+        ? error.reasons.map((r) => ({ name: r.name, message: r.message }))
+        : undefined,
+    });
+    throw new Error("MongoDB bağlantısı başarısız oldu."); // Uygulamanın çalışmaya devam etmesini engelle
   }
 }
 
