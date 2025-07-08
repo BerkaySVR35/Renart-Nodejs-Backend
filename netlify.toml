@@ -1,0 +1,9 @@
+[build]
+  command = "npm install" # Deploy sırasında çalıştırılacak komut
+  functions = "api"       # Sunucusuz fonksiyonlarınızın bulunduğu klasör
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat" # Gelen istekleri Netlify fonksiyonlarına yönlendirir
+  status = 200
+  force = true
