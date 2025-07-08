@@ -7,7 +7,7 @@ app.use(express.json());
 async function getGoldPriceUsd() {
   //GoldApi.io settings.
   let myHeaders = new Headers();
-  myHeaders.append("x-access-token", "goldapi-kn2o8vsmct44ocy-io");
+  myHeaders.append("x-access-token", "goldapi-kn2o8vsmctr74g6-io");
   myHeaders.append("Content-Type", "application/json");
 
   let requestOptions = {
