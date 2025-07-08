@@ -2,6 +2,7 @@
 
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 const serverless = require("serverless-http"); // Netlify Functions için gerekli
 const Product = require("../../models/product.model.js"); // <-- Bu yolun doğru olduğundan emin ol!
 
@@ -12,6 +13,8 @@ if (process.env.NODE_ENV !== "production") {
 
 const app = express();
 app.use(express.json());
+
+app.use(cors());
 
 // MongoDB Bağlantı Ayarları (Vercel için yaptığımız zaman aşımı ayarlarını burada da koruyabiliriz)
 let cachedDb = null;
