@@ -1,9 +1,9 @@
 [build]
-  command = "npm install"
-  functions = "api"
+  command = "npm install" # Deploy sırasında çalıştırılacak komut
+  functions = "netlify/functions" # <-- Sunucusuz fonksiyonlarınızın bulunduğu klasör
 
 [[redirects]]
   from = "/api/*"
-  to = "/.netlify/functions/:splat"
+  to = "/.netlify/functions/:splat" # Gelen istekleri Netlify fonksiyonlarına yönlendirir
   status = 200
   force = true

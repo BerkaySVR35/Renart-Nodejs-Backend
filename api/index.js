@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const serverless = require("serverless-http");
-const Product = require("../../models/product.model.js");
+const Product = require("../models/product.model.js");
 
 const app = express();
 app.use(express.json());
