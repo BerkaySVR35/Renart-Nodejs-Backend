@@ -1,9 +1,9 @@
 [build]
   command = "npm install"
-  functions = "netlify/functions" # <-- Yeni fonksiyonlar klasörü
+  functions = "api"
 
 [[redirects]]
   from = "/api/*"
-  to = "/.netlify/functions/:splat" # Bu kural hala geçerli, products.js'i bulacak
+  to = "/.netlify/functions/:splat"
   status = 200
   force = true
