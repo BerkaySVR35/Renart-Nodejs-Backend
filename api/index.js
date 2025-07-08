@@ -3,10 +3,6 @@ const mongoose = require("mongoose");
 const serverless = require("serverless-http");
 const Product = require("../models/product.model.js");
 
-if (process.env.NODE_ENV !== "production") {
-  require("dotenv").config();
-}
-
 const app = express();
 app.use(express.json());
 
