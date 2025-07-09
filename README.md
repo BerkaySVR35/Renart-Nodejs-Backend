@@ -1,7 +1,30 @@
-Renart-Nodejs-BackendBu depo, Renart e-ticaret uygulamasının arka yüzünü (backend) oluşturan bir Node.js projesidir. Ürün verilerini yönetir ve ön yüze API hizmetleri sunar.İçindekilerÖzelliklerTeknolojilerKurulumAPI Uç NoktalarıKatkıda BulunmaLisansÖzelliklerÜrün Veri Yönetimi: Ürün bilgilerini (ad, fiyat, resim, renkler, popülerlik puanı vb.) depolama ve sunma.API Hizmetleri: Ön yüz uygulamasının ürün verilerine erişmesi için RESTful API uç noktaları sağlar.Netlify Functions Entegrasyonu: Sunucusuz mimari ile ölçeklenebilir ve kolay dağıtılabilir bir yapı sunar.TeknolojilerBu proje aşağıdaki temel teknolojileri kullanılarak geliştirilmiştir:Node.js: Sunucu tarafı uygulamalar için JavaScript çalışma zamanı.Express.js: Node.js için hızlı, açık ve minimalist bir web çerçevesi.Netlify Functions: Sunucusuz fonksiyonları dağıtmak için kullanılır.Axios: HTTP istekleri yapmak için Promise tabanlı HTTP istemcisi (eğer backend içinde başka bir API'ye istek yapılıyorsa).JavaScript (ES6+): Uygulama mantığı için programlama dili.KurulumProjeyi yerel geliştirme ortamınızda kurmak ve çalıştırmak için aşağıdaki adımları izleyin:Depoyu Klonlayın:git clone https://github.com/BerkaySVR35/Renart-Nodejs-Backend.git
+Renart-Nodejs-BackendBu depo, bir e-ticaret uygulamasının arka yüzünü (backend) oluşturan bir Node.js projesidir. Ürün verilerini yönetir ve ön yüze API hizmetleri sunar.
+
+İçindekiler
+Özellikler
+Teknolojiler
+Kurulum
+API Uç Noktaları
+Katkıda Bulunma
+Lisans 
+Özellikler 
+
+Ürün Veri Yönetimi: Ürün bilgilerini (ad, fiyat, resim, renkler, popülerlik puanı vb.) depolama ve sunma.API Hizmetleri: Ön yüz uygulamasının ürün verilerine erişmesi için RESTful API uç noktaları sağlar.
+
+Netlify Functions Entegrasyonu: Sunucusuz mimari ile ölçeklenebilir ve kolay dağıtılabilir bir yapı sunar.TeknolojilerBu proje aşağıdaki temel teknolojileri kullanılarak geliştirilmiştir:
+
+Node.js: Sunucu tarafı uygulamalar için JavaScript çalışma zamanı.Express.js: Node.js için hızlı, açık ve minimalist bir web çerçevesi.
+
+Netlify Functions: Sunucusuz fonksiyonları dağıtmak için kullanılır.Axios: HTTP istekleri yapmak için Promise tabanlı HTTP istemcisi (eğer backend içinde başka bir API'ye istek yapılıyorsa).JavaScript (ES6+): Uygulama mantığı için programlama dili.KurulumProjeyi yerel geliştirme ortamınızda kurmak ve çalıştırmak için aşağıdaki adımları izleyin:
+
+Depoyu Klonlayın:git clone https://github.com/BerkaySVR35/Renart-Nodejs-Backend.git
+
 Proje Dizinine Gidin:cd Renart-Nodejs-Backend
+
 Bağımlılıkları Yükleyin:npm install
+
 # veya
+
 yarn install
 Ortam Değişkenlerini Ayarlayın (Gerekirse):Projeniz herhangi bir API anahtarı, veritabanı bağlantı dizesi vb. gibi hassas bilgiler kullanıyorsa, .env dosyası oluşturmanız ve ilgili değişkenleri tanımlamanız gerekebilir. Örnek:# .env
 DATABASE_URL=your_database_connection_string
