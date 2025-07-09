@@ -1,3 +1,4 @@
+https://renart-backend.netlify.app/.netlify/functions/product
 Renart-Nodejs-BackendBu depo, bir e-ticaret uygulamasının arka yüzünü (backend) oluşturan bir Node.js projesidir. Ürün verilerini yönetir ve ön yüze API hizmetleri sunar.
 
 İçindekiler
@@ -33,7 +34,11 @@ Uygulamayı Başlatın (Yerel Geliştirme İçin):Eğer projeniz bir Express sun
 # veya
 node server.js # veya ana dosyanızın adı
 Eğer sadece Netlify Functions içeriyorsa, Netlify CLI ile yerel olarak test edebilirsiniz:netlify dev
-API Uç NoktalarıBu backend uygulaması, ön yüz uygulamasının ürün verilerine erişmesi için aşağıdaki ana API uç noktasını sağlar:GET /.netlify/functions/product: Tüm ürün verilerini döndürür.Metod: GETURL: https://renart-backend.netlify.app/.netlify/functions/product (Dağıtıldıktan sonra)Yanıt Örneği:[
+API Uç NoktalarıBu backend uygulaması, ön yüz uygulamasının ürün verilerine erişmesi için aşağıdaki ana API uç noktasını sağlar:GET /.netlify/functions/product: Tüm ürün verilerini döndürür.Metod: 
+
+GETURL: https://renart-backend.netlify.app/.netlify/functions/product 
+
+(Dağıtıldıktan sonra)Yanıt Örneği:[
     {
         "_id": "65b9e0b8e7c1f8a7b3e1c2d3",
         "name": "Engagement Ring 1",
@@ -52,4 +57,6 @@ API Uç NoktalarıBu backend uygulaması, ön yüz uygulamasının ürün verile
     }
     // ... diğer ürünler
 ]
+
+
 Katkıda BulunmaKatkılarınız her zaman memnuniyetle karşılanır! Herhangi bir hata bulursanız veya yeni bir özellik önermek isterseniz lütfen bir "issue" açın veya bir "pull request" gönderin.LisansBu proje MIT Lisansı altında lisanslanmıştır. Daha fazla bilgi için LICENSE dosyasına bakın.
